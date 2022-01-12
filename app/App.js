@@ -1,10 +1,12 @@
 import React from 'react';
-import {View,Text} from 'react-native';
-function App(){
-  return(
-    <View>
-      <Text>Hello World!</Text>
-    </View>
+import { View } from 'react-native';
+import BottomTabNavigator from './src/navigation/BottomTab';
+import { NavigationContainer } from '@react-navigation/native';
+function App() {
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   )
 }
 export default App;
