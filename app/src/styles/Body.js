@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-function body () {
+const body = StyleSheet.create({
     
-}
+});
 export default body;
