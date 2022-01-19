@@ -45,9 +45,7 @@ function fruitNewScreen() {
                         console.log("*");
                         addFruit();
                     }
-
-                }
-                
+                }              
             }
         }
     }
