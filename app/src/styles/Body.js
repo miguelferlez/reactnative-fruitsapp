@@ -8,17 +8,18 @@ const body = StyleSheet.create({
         width: 200, 
         height:200,
         alignSelf:"center",
-        
+        backgroundColor:'white',
+        borderRadius: 10
     },
     nombre:{
         fontWeight:"bold",
         alignSelf:"center",
-        color:"#000000"    
+        color:'black'
     },
     precio:{
         fontWeight:"bold",
         alignSelf:"center",
-        color:"#FE0000"
+        color:'red'
     }
 });
 export default body;
