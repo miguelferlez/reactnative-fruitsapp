@@ -7,6 +7,12 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
     return(
         <Tab.Navigator screenOptions={({route}) => ({
+            tabBarStyle:{
+                backgroundColor: "#2E2211",
+            },
+            tabBarActiveBackgroundColor: "#FFFEFB",
+               
+            
             tabBarIcon: ({color, size, focused}) => {
                 let iconName;
                 if(route.name === 'Menu') {

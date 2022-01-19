@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 function fruitNewScreen() {
     return(
         <View>
-            <Text>En esta ventana para añadir nuevas frutas</Text>
+            <Text>En esta ventana tas</Text>
         </View>
     )
 }

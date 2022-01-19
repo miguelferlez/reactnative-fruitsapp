@@ -6,7 +6,7 @@ function fruitNewStack() {
     return(
         <Stack.Navigator>
             <Stack.Screen name="Añadir nueva fruta" component={fruitNewScreen} options={{
-                headerTitleAlign: 'center'
+                headerTitleAlign: 'center', headerStyle:{ backgroundColor: '#815D27' }
             }}/>
         </Stack.Navigator>
     )

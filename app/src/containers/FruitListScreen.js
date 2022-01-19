@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet,FlatList,Image } from "react-native";
- 
+ import body from "../styles/Body";
 function fruitListScreen({route}) {
    const [fruits,setFruits] = useState(null);
    
@@ -16,21 +16,60 @@ function fruitListScreen({route}) {
 
 
 const renderItem = ({item}) => (
- 
-    <View >
-       
-        <View style={{ marginLeft:'10%'}}>
-       
-               <Image
-                        style={{width: 50, height:50}}
-                        source={require('../assets/manzana.jpg')}/>
-            <Text style={{fontWeight:"bold"}}> Nombre: <Text>{item.name} </Text></Text>
-            </View>
+    
+    
+    <View style={body.contenedor}>
+        {item.name === "Piña" ? 
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/piña.png')}/>: null}
+    
+       {item.name === "Kiwi" ? 
+        
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/kiwiRM.png')}/>: null}
+                    
+        {item.name === "Manzana" ?             
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/manzanaRM.png')}/>: null}
+                    
+      {item.name === "Melocotón" ?          
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/melocotonRM.png')}/>: null}
+                     
+        {item.name === "Naranja" ? 
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/naranjaRM.png')}/>: null}
+                     
+       {item.name === "Pera" ? 
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/peraRM.png')}/>: null}
+                    
+        {item.name === "Plátano" ? 
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/platanoRM.png')}/>: null}
+                   
+        {item.name === "Uvas" ? 
+        <Image
+                    style={body.imagenes}
+                    source={require('../assets/uvasRM.png')}/>: null}
+                    
 
-            <View style={{ marginLeft:'75%'}}>
-            <Text >Precio:{item.price} </Text>
-            </View>
-    </View>
+        <Text style={body.nombre}> Nombre: <Text>{item.name} </Text></Text>
+        
+
+       
+        <Text style={body.precio}>Precio:{item.price} </Text>
+        
+
+</View>
+
 )
    
    return(
@@ -44,13 +83,4 @@ const renderItem = ({item}) => (
     );
 }
 
-
-const style = StyleSheet.create({
-    contenedor:{
-        flex: 1,
-        alignItems: 'center',
-        backgroundColor: "#EDC669",
-       
-    }
-})
 export default fruitListScreen;
