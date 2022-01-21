@@ -6,7 +6,7 @@ function fruitListStack() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Lista de frutas" component={fruitListScreen} options={{
-                headerTitleAlign: 'center'  , headerStyle:{ backgroundColor: '#815D27' }              
+                headerTitleAlign: 'center'  , headerStyle:{ backgroundColor: 'rgb(129,93,39)' }, headerTitleStyle:{ color: 'white' }              
             }}/>
         </Stack.Navigator>
     );

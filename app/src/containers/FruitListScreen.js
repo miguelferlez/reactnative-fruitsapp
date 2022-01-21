@@ -23,7 +23,7 @@ function fruitListScreen() {
     function fruitImage(name) {
         switch (name) {
             case 'Kiwi':
-                return <Image style={body.imagenes} source={require('../assets/piña.png')} />
+                return <Image style={body.imagenes} source={require('../assets/kiwi.png')} />
             case 'Manzana':
                 return <Image style={body.imagenes} source={require('../assets/manzana.png')} />
             case 'Melocotón':
@@ -40,19 +40,29 @@ function fruitListScreen() {
                 return <Image style={body.imagenes} source={require('../assets/sandia.png')} />
             case 'Uvas':
                 return <Image style={body.imagenes} source={require('../assets/uvas.png')} />
+            case 'Mango':
+                return <Image style={body.imagenes} source={require('../assets/mango.png')} />
+            case 'Papaya':
+                return <Image style={body.imagenes} source={require('../assets/papaya.png')} />
+            case 'Fresa':
+                return <Image style={body.imagenes} source={require('../assets/fresas.png')} />
+            case 'Cerezas':
+                return <Image style={body.imagenes} source={require('../assets/cerezas.png')} />
             default:
-                return null;
+                return <Image style={body.imagenes} source={require('../assets/notfound.png')} />;
         }
     }
     const fruitItem = ({ item }) => (
-        <View style={body.contenedor}>
+        <View style={body.item}>
             {fruitImage(item.name)}
-            <Text style={body.nombre}>{item.name}</Text>
-            <Text style={body.precio}>{item.price} €</Text>
+            <View style={body.itemContent}>
+                <Text style={body.nombre}>{item.name}</Text>
+                <Text style={body.precio}>{item.price} €/Kg.</Text>
+            </View>
         </View>
     )
     return (
-        <View>
+        <View style={body.contenedor}>
             <FlatList
                 data={fruits}
                 renderItem={fruitItem}

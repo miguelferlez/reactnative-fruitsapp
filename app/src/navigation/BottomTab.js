@@ -8,20 +8,25 @@ const BottomTabNavigator = () => {
     return(
         <Tab.Navigator screenOptions={({route}) => ({
             tabBarStyle:{
-                backgroundColor: "#2E2211",
+                backgroundColor: 'rgb(46,34,17)',
             },
-            tabBarActiveBackgroundColor: "#FFFEFB",
-               
+            tabBarActiveBackgroundColor: 'rgb(40,30,10)',
+            tabBarInactiveTintColor: 'rgb(225,181,118)',
             
             tabBarIcon: ({color, size, focused}) => {
                 let iconName;
                 if(route.name === 'Menu') {
-                    iconName = focused ? 'list' : 'list-outline'
+                    iconName = focused ? 'list' : 'list-outline',
+                    color= focused ? 'rgb(129,93,39)' : 'rgb(225,181,118)'
                 } else if (route.name === 'Añadir fruta') {
-                    iconName = focused ? 'nutrition' : 'nutrition-outline'
+                    iconName = focused ? 'nutrition' : 'nutrition-outline',
+                    color= focused ? 'rgb(129,93,39)' : 'rgb(225,181,118)'
                 }
-                return <Ionicons name = {iconName} size={size} color={color}/>;
+                return <Ionicons name = {iconName} size={size} color={color} />;
             },
+            
+                tabBarActiveTintColor: 'rgb(129,93,39)'
+            
             
         })}>
             <Tab.Screen name="Menu" component={fruitListStack} options={{ headerShown: false }} />

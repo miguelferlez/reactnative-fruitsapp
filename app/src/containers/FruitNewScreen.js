@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import body from "../styles/Body";
 function fruitNewScreen() {
     const [selectedValue, setSelectedValue] = useState("Kiwi");
     const [fruits, setFruits] = useState(null);
@@ -69,8 +70,8 @@ function fruitNewScreen() {
         }).catch(error => console.log(error));
     }
     return (
-        <View>
-            <Text>En esta ventana para añadir nuevas frutas. Por favor, selecciona una fruta y precio para la fruta que desea añadir.</Text>
+        <View style={body.contenedor}>
+            <Text style={body.paragraph}>En esta ventana para añadir nuevas frutas. Por favor, selecciona una fruta y precio para la fruta que desea añadir.</Text>
             <Picker selectedValue={selectedValue} onValueChange={pickerValue => (setSelectedValue(pickerValue), setFruitName(pickerValue))}>
                 <Picker.Item label="Kiwi" value="Kiwi" />
                 <Picker.Item label="Manzana" value="Manzana" />
@@ -82,13 +83,13 @@ function fruitNewScreen() {
                 <Picker.Item label="Uvas" value="Uvas" />
                 <Picker.Item label="Cerezas" value="Cerezas" />
                 <Picker.Item label="Sandía" value="Sandía" />
-                <Picker.Item label="Melón" value="Melón" />
+                <Picker.Item label="Papaya" value="Papaya" />
                 <Picker.Item label="Fresa" value="Fresa" />
-                <Picker.Item label="Mandarina" value="Mandarina" />
+                <Picker.Item label="Mango" value="Mango" />
             </Picker>
-            <TextInput placeholder="Introduce un precio" onChangeText={price => setFruitPrice(price)} />
-            <TouchableOpacity onPress={checkInput}>
-                <Text>Añadir</Text>
+            <TextInput placeholder="Introduce un precio" onChangeText={price => setFruitPrice(price)} style={body.input} />
+            <TouchableOpacity onPress={checkInput} style={body.button}>
+                <Text style={body.buttonText}>Añadir</Text>
             </TouchableOpacity>
         </View>
     )
