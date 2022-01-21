@@ -57,7 +57,7 @@ const body = StyleSheet.create({
         fontSize: 22,
         color: 'white',
         alignSelf: 'center',
-        
+
     }
 });
 export default body;

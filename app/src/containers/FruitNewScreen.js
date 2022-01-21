@@ -32,21 +32,21 @@ function fruitNewScreen() {
                         break;
                     }
                 }
-                if(name != null){
+                if (name != null) {
                     for (let i = 0; i < fruits.length; i++) {
-                        if(name === fruits[i].name) {
+                        if (name === fruits[i].name) {
                             Alert.alert("Esta fruta ya está en lista.");
                             flag = true;
                             break;
                         } else {
-                            flag = false;                           
+                            flag = false;
                         }
                     }
-                    if(flag === false){
+                    if (flag === false) {
                         console.log("*");
                         addFruit();
                     }
-                }              
+                }
             }
         }
     }
