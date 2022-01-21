@@ -10,6 +10,7 @@ const BottomTabNavigator = () => {
             tabBarStyle: {
                 backgroundColor: 'rgb(46,34,17)',
             },
+            tabBarActiveTintColor: 'rgb(129,93,39)',
             tabBarActiveBackgroundColor: 'rgb(40,30,10)',
             tabBarInactiveTintColor: 'rgb(225,181,118)',
             tabBarIcon: ({ color, size, focused }) => {
