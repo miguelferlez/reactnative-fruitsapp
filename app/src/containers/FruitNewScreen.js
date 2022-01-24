@@ -18,34 +18,32 @@ function fruitNewScreen() {
         getFruits();
     }, [])
     const checkInput = () => {
-        var name = fruitName;
-        var price = fruitPrice;
         var flag = false;
         var numbers = /[0-9.]/
-        if (price.valueOf() === 0) {
+        if (fruitPrice == 0) {
             Alert.alert("Por favor, rellena los campos para poder añadir la fruta deseada.");
         } else {
-            if (price.length != 0) {
-                for (let i = 0; i < price.length; i++) {
-                    if (!price.charAt(i).match(numbers)) {
+            if (fruitPrice.length != 0) {
+                for (let i = 0; i < fruitPrice.length; i++) {
+                    if (isNaN(fruitPrice)) {
                         Alert.alert("Por favor, introduce un formato numérico válido.");
+                        flag = true;
                         break;
                     }
-                }
-                if (name != null) {
-                    for (let i = 0; i < fruits.length; i++) {
-                        if (name === fruits[i].name) {
-                            Alert.alert("Esta fruta ya está en lista.");
-                            flag = true;
-                            break;
-                        } else {
-                            flag = false;
+                    if (fruitName != null) {
+                        for (let i = 0; i < fruits.length; i++) {
+                            if (fruitName === fruits[i].name) {
+                                Alert.alert("Esta fruta ya está en lista.");
+                                flag = true;
+                                break;
+                            } else {
+                                flag = false;
+                            }
                         }
-                    }
-                    if (flag === false) {
-                        console.log("*");
-                        addFruit();
-                    }
+                        if (flag === false) {
+                            addFruit();
+                        }
+                }
                 }
             }
         }
