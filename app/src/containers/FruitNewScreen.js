@@ -18,32 +18,27 @@ function fruitNewScreen() {
         getFruits();
     }, [])
     const checkInput = () => {
+        getFruits();
         var flag = false;
-        var numbers = /[0-9.]/
         if (fruitPrice == 0) {
             Alert.alert("Por favor, rellena los campos para poder añadir la fruta deseada.");
         } else {
-            if (fruitPrice.length != 0) {
-                for (let i = 0; i < fruitPrice.length; i++) {
-                    if (isNaN(fruitPrice)) {
-                        Alert.alert("Por favor, introduce un formato numérico válido.");
+            if (isNaN(fruitPrice)) {
+                Alert.alert("Por favor, introduce un formato numérico válido.");
+                flag = true;
+            } else {
+                for (let i = 0; i < fruits.length; i++) {
+                    if (fruitName.match(fruits[i].name)) {
+                        Alert.alert("Esta fruta ya está en lista.");
                         flag = true;
                         break;
+                    } else {
+                        flag = false;
                     }
-                    if (fruitName != null) {
-                        for (let i = 0; i < fruits.length; i++) {
-                            if (fruitName === fruits[i].name) {
-                                Alert.alert("Esta fruta ya está en lista.");
-                                flag = true;
-                                break;
-                            } else {
-                                flag = false;
-                            }
-                        }
-                        if (flag === false) {
-                            addFruit();
-                        }
                 }
+                if (flag === false) {
+                    addFruit();
+                    flag = true;
                 }
             }
         }
@@ -63,8 +58,7 @@ function fruitNewScreen() {
         }).then((responseJson) => {
             console.log('getting data from fetch', responseJson);
             Alert.alert('¡La fruta se ha insertado en la lista!');
-            setFruitName(null);
-            setFruitPrice(null);
+            setFruitPrice(0);
         }).catch(error => console.log(error));
     }
     return (
