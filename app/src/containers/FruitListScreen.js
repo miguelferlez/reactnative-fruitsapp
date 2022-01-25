@@ -33,7 +33,7 @@ function fruitListScreen() {
             case 'Pera':
                 return <Image style={body.imagenes} source={require('../assets/pera.png')} />
             case 'Piña':
-                return <Image style={body.imagenes} source={require('../assets/piña.png')} />
+                return <Image style={body.imagenes} source={require('../assets/pina.png')} />
             case 'Plátano':
                 return <Image style={body.imagenes} source={require('../assets/platano.png')} />
             case 'Sandía':
