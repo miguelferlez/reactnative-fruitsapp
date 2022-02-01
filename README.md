@@ -1,5 +1,6 @@
-# pmdm-networking-fruitsapp
-# Miguel Fernández López
-# Daniel Valiente Muñoz
-
-Aplicación en React Native compuesta por dos ventanas para visualizar una lista de frutas y añadir una a la misma, a través de los distintos métodos dentro de la API proporcionada.
+# Fruits app
+React Native application that makes use of the different methods (get and post) inside the provided API. This app is composed with two screens: 
+- The main screen, or 'list screen', shows the list of fruits (and its prices) from the mentioned API. Each fruit comes with its own image.
+- The 'add screen', where users can create a fruit record and add it to the previous list. 
+***
+Developed by @miguelferlez @danivaliente
